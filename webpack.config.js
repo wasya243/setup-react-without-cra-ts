@@ -28,12 +28,16 @@ module.exports = {
         use: ["ts-loader"],
       },
       {
-        test: /\.css$/,
-        use: [ "style-loader", "css-loader" ]
-      }
+        test: /\.(s(a|c)ss)$/,
+        use: [ "style-loader", "css-loader", "sass-loader" ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [{ loader: 'file-loader' }]
+        },
     ],
   },
   resolve: {
-    extensions: ["*", ".ts", ".tsx", ".js", ".css"],
+    extensions: ["*", ".ts", ".tsx", ".js", ".css", ".scss"],
   }
 };
